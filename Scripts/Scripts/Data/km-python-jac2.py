@@ -1,0 +1,65 @@
+changeHistory: []
+content: |
+  import pymongo
+  from pymongo import MongoClient
+  def create_client():
+   
+     # Provide the mongodb atlas url to connect python to mongodb using pymongo
+     #dburl = f"mongodb://kmadmin:Welcome123@3.129.12.144:27017/admin?readPreference=secondaryPreferred"
+     dburl = f"mongodb://kmadmin:Welcome123@3.129.12.144:27017/default_db?authSource=admin"
+     #dburl = f"mongodb://3.129.12.144:27017/"
+     
+     #Create a connection using MongoClient. You can import MongoClient or use pymongo.MongoClient
+     try:
+        with pymongo.timeout(50):
+           #myclient = pymongo.MongoClient(dburl)
+           myclient = MongoClient(dburl)
+           print("Connected to MongoDB")
+           #dbs = MongoClient.list_databases(session=myclient, comment=None, **kwargs)
+           dbs = myclient.list_databases()
+           for db in dbs:
+              print("Databases:", db)
+              print(dbs)
+           #database = myclient["mydemodb"]
+           #collection_list = database.list_collections()
+           #for c in collection_list:
+           #   print(c)
+     except Exception as e:
+        print("Connection not Successful")""
+        print(e)
+     #return myclient
+     # Create the database for our example (we will use the same database throughout the tutorial)
+     #return client['user_shopping_list']
+     #return mydb
+  # This is added so that many files can reuse the function get_database()
+
+  def get_databases():
+     client = create_client()
+     try:
+        databases = client.list_database_names()
+        print("Databases:", databases)
+     except Exception as e:
+        print("Unable to list Databases:")
+        print(e)
+
+  if __name__ == "__main__":   
+    
+     # Get the database
+     create_client()
+     #client = create_client()
+     #get_databases()
+created: 2026-07-21 13:42:28 +0200
+createdBy: karthik
+description:
+exportReleaseLevel: 8.0.0.0
+exportTable: ops_script
+notes: []
+opswiseGroups:
+- KM-Scripts-JaC
+resolveVariables: true
+retainSysIds: true
+scriptName: 'km-python-jac2.py '
+scriptType: Data
+updated: 2026-07-21 13:42:28 +0200
+updatedBy: karthik
+version: 1
