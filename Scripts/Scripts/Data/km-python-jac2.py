@@ -3,7 +3,7 @@ content: |
   import pymongo
   from pymongo import MongoClient
   def create_client():
-   
+   #changes from Github 27-July-2026
      # Provide the mongodb atlas url to connect python to mongodb using pymongo
      #dburl = f"mongodb://kmadmin:Welcome123@3.129.12.144:27017/admin?readPreference=secondaryPreferred"
      dburl = f"mongodb://kmadmin:Welcome123@3.129.12.144:27017/default_db?authSource=admin"
@@ -28,7 +28,7 @@ content: |
         print("Connection not Successful")""
         print(e)
      #return myclient
-     # Create the database for our example (we will use the same database throughout the tutorial)
+     # Create the databa/se for our example (we will use the same database throughout the tutorial)
      #return client['user_shopping_list']
      #return mydb
   # This is added so that many files can reuse the function get_database()
