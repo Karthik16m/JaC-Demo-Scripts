@@ -3,7 +3,7 @@ content: |
   import pymongo
   from pymongo import MongoClient
   def create_client():
-   #changes from Github 27-July-2026
+   #changes from Github 27-July-2026 testing changes 
      # Provide the mongodb atlas url to connect python to mongodb using pymongo
      #dburl = f"mongodb://kmadmin:Welcome123@3.129.12.144:27017/admin?readPreference=secondaryPreferred"
      dburl = f"mongodb://kmadmin:Welcome123@3.129.12.144:27017/default_db?authSource=admin"
