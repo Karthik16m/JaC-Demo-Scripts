@@ -1,5 +1,5 @@
 # sample.ps1
-
+#change made on july 23 12:03
 # Variables
 $Name = "Karthik"
 $CurrentDate = Get-Date
